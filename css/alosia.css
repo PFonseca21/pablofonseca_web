@@ -1,0 +1,64 @@
+
+body{
+    margin: 0;
+    font-family:"Rubik Glitch";
+    color: #363837 ;
+    background-color: #E94E18;
+    font-size: 20px;
+    font-weight: 50;
+    line-height: 50px
+}
+header{
+    background-color: #D9C50C;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+header h1{
+    color: #E94E18;
+    font-family:"Rubik Glitch";
+    font-weight: 40;
+    font-size: 60px;
+}
+
+header img{
+    border-radius: 170px;
+    width: 300px;
+}
+
+main{
+    max-width: 1100px;   
+    margin: 0 auto
+}
+
+main img{
+    max-width: 100%;
+    padding: 0 20px;
+}
+main h2{
+    font-size: 40px;
+    font-weight: 40;
+    color: #D9C50C;
+}
+
+a{
+    color: #363837;
+}
+
+a:hover{
+     color: #CB2472;
+    background-color:#D9C50C
+}
+
+footer{
+    background-color: #D8CF88;
+    text-align: center;
+}
+
+footer p{
+    margin: 0;
+    font-size: small;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #E94E18;
+    font-weight:bold
+}

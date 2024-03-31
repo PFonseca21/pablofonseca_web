@@ -1,54 +1,72 @@
+/* Golden Ratio */
+main {
+    min-height: 60vh; /* Adjust as needed */
+}
+
+/* Base Styles */
 
 body{
     margin: 0;
-    font-family:"Rubik Glitch";
+    font-family:"Rubik Glitch", sans-serif;
     color: #363837 ;
     background-color: #E94E18;
     font-size: 20px;
-    font-weight: 50;
-    line-height: 50px
+    font-weight: 400; /* Adjusted for consistency */
+    line-height: 1,5; /* Using a unitless value for line-height */
 }
+
+/* Header Styles */
 header{
     background-color: #D9C50C;
     text-align: center;
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 50px 0 20px;
+    padding-bottom: 20px; /* Shorthand for padding */
     width: 100%;
 }
 header h1{
     color: #E94E18;
-    font-family:"Rubik Glitch";
-    font-weight: 40;
+    font-weight: 400; /* Adjusted for consistency */
     font-size: 90px;
 }
 
 header img{
     width: 500px;
+    padding-top: 20px;
 }
 
+
+/* Main Content Styles */
 main{
     max-width: 100%;   
-    margin: 0 auto
+    margin: 0 auto;
 }
 
-main img{
-    max-width: 100%;
-    padding-left: 5%;
-    padding-bottom: 0%;
-    margin: 0;
-}
-main h2{
+main h2, main p {
     font-size: 70px;
-    font-weight: 40;
+    font-weight: 400;
     color: #D9C50C;
     padding-left: 5%;
 }
 
-main p{font-size: 40px;
-padding-left: 5%;
-margin: 10px;
+main p {
+    font-size: 40px; /* Overridden from above for <p> elements */
+    margin: 10px 0; /* Adjusted margin */
 }
 
+
+
+/* Embeded Ig post */
+.instagram-embed-wrapper {
+    padding-left: 0; /* Add padding to the left */
+    /* Or to center the embed and add padding uniformly, you could use: */
+    /* padding: 20px; */
+    /* margin: auto; */
+    max-width: 540px; /* This can be adjusted to fit the embed's width or left out for full width */
+    margin: 0 auto; /* This centers the wrapper if max-width is set */
+}
+
+
+/* Link Styles */
 a{
     color: #363837;
     font-size: 30px;
@@ -60,6 +78,8 @@ a:hover{
     background-color:#D9C50C
 }
 
+/* Footer Styles */
+
 footer{
     background-color: #D8CF88;
     text-align: center;
@@ -68,7 +88,7 @@ footer{
 footer p{
     margin: 0;
     font-size: small;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
     color: #E94E18;
     font-weight:bold
 }

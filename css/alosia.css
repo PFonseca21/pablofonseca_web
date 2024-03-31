@@ -91,9 +91,10 @@ main p {
     height: 673px; /* Height of the visible area, adjust as needed */
     overflow: hidden; /* Ensures only the part of the video within this frame is visible */
     position: absolute; /* To overlay within the video-instagram-container */
-    top: 0; /* Adjust based on desired position */
+    top: 55px; /* Adjust based on desired position */
     left: 0; /* Adjust based on desired position */
     z-index: 4; /* Ensure it's between the main video and the Instagram embed */
+    opacity: 50%;
 }
 
 .grain-video{

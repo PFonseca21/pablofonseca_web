@@ -97,7 +97,7 @@ main p {
     opacity: 100%;
 }
 
-.grain-video{
+.grain-video .burn-video{
     width: 100%;
     height: 100%;
     object-fit: cover;

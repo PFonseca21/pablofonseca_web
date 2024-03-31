@@ -28,11 +28,11 @@ header{
 }
 
 header{
-    background-image: url("C:/Users/pfons/Github/pablofonseca_web/img/Grunge.png");
+    background-image: url("../img/Grunge.png");
     background-blend-mode: multiply; /* Blends the texture with the background color */
     background-size: cover; /* Or 'repeat' if you want to tile a smaller texture */
 }
-
+img\Grunge.png
 header h1{
     color: #E94E18;
     font-weight: 400; /* Adjusted for consistency */

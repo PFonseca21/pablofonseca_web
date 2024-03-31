@@ -77,12 +77,13 @@ main p {
 
 /* Styling for video container */
 .video-container {
+    max-width: 673px;
+    width: 100%;
+    height: 673px;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Occupy the full width of the parent container */
-    height: 100%; /* Occupy the full height of the parent container */
-    z-index: 2; /* Ensure video is above the Instagram embed */
+    top: 55px;
+    pointer-events: none;
+    z-index: 2;
 }
 
 /* Overlay video styling */

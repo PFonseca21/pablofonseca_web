@@ -87,9 +87,9 @@ main p {
 }
 
 .blurry-video{
-    max-width: 540px;
-    width: 100%;
+    width: 540px;
     height: 673px;
+    position: absolute;
     top: 55px;
     pointer-events: none;
     z-index: 2;

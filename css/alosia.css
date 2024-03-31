@@ -86,14 +86,21 @@ main p {
     z-index: 3;
 }
 
-.blurry-video{
-    width: 540px;
-    height: 673px;
-    position: absolute;
-    top: 55px;
-    pointer-events: none;
-    z-index: 4;
-    opacity: 55%;
+.grain-video-frame{
+    width: 540px;  /* Width of the visible area, adjust as needed */
+    height: 673px; /* Height of the visible area, adjust as needed */
+    overflow: hidden; /* Ensures only the part of the video within this frame is visible */
+    position: absolute; /* To overlay within the video-instagram-container */
+    top: 0; /* Adjust based on desired position */
+    left: 0; /* Adjust based on desired position */
+    z-index: 1; /* Ensure it's between the main video and the Instagram embed */
+}
+
+.grain-video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 /* Overlay video styling */
 .overlay-video {

@@ -13,18 +13,17 @@ header{
     text-align: center;
     padding-top: 50px;
     padding-bottom: 20px;
-    max-width: 100%;
+    width: 100%;
 }
 header h1{
     color: #E94E18;
     font-family:"Rubik Glitch";
     font-weight: 40;
-    font-size: 60px;
+    font-size: 90px;
 }
 
 header img{
-    border-radius: 170px;
-    width: 300px;
+    width: 500px;
 }
 
 main{
@@ -34,16 +33,26 @@ main{
 
 main img{
     max-width: 100%;
-    padding: 0 20px;
+    padding-left: 5%;
+    padding-bottom: 0%;
+    margin: 0;
 }
 main h2{
-    font-size: 40px;
+    font-size: 70px;
     font-weight: 40;
     color: #D9C50C;
+    padding-left: 5%;
+}
+
+main p{font-size: 40px;
+padding-left: 5%;
+margin: 10px;
 }
 
 a{
     color: #363837;
+    font-size: 30px;
+    padding-left: 5%;
 }
 
 a:hover{

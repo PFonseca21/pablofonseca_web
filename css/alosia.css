@@ -94,7 +94,7 @@ main p {
     top: 55px; /* Adjust based on desired position */
     left: 0; /* Adjust based on desired position */
     z-index: 4; /* Ensure it's between the main video and the Instagram embed */
-    opacity: 50%;
+    opacity: 100%;
 }
 
 .grain-video{

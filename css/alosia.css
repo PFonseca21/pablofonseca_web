@@ -13,6 +13,9 @@ body{
     font-size: 20px;
     font-weight: 400; /* Adjusted for consistency */
     line-height: 1,5; /* Using a unitless value for line-height */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Header Styles */
@@ -39,6 +42,7 @@ header img{
 main{
     max-width: 100%;   
     margin: 0 auto;
+    flex: 1; /* Allows main content to grow and push footer down */
 }
 
 main h2, main p {
@@ -83,6 +87,10 @@ a:hover{
 footer{
     background-color: #D8CF88;
     text-align: center;
+    padding: 10px 0; /* Adds more vertical space */
+    font-size: 1.5rem; /* Increases readability */
+    position: relative; /* Adjust based on layout needs */
+    width: 100%;
 }
 
 footer p{

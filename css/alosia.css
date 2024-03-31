@@ -101,20 +101,6 @@ main p {
     pointer-events: none; /* Make the video unclickable, allowing clicks to pass through */
 }
 
-/* Blurry layer */
-.blurry-layer {
-    position: absolute;
-    top: 55px;
-    left: 0;
-    max-width: 540px;
-    width: 540px;
-    height: 673px;
-    background: rgba(255, 255, 255, 0.5); /* Adjust color and opacity */
-    z-index: 2; /* Ensure it's above the embed but below the video */
-    display: none;
-    /* Optional: Apply a blur effect */
-    backdrop-filter: blur(5px);
-}
 
 
 /* Instagram Embed Wrapper */

@@ -32,7 +32,7 @@ header{
     background-blend-mode: multiply; /* Blends the texture with the background color */
     background-size: cover; /* Or 'repeat' if you want to tile a smaller texture */
 }
-img\Grunge.png
+
 header h1{
     color: #E94E18;
     font-weight: 400; /* Adjusted for consistency */

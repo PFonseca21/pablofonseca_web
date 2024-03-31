@@ -93,7 +93,7 @@ main p {
     position: absolute; /* To overlay within the video-instagram-container */
     top: 0; /* Adjust based on desired position */
     left: 0; /* Adjust based on desired position */
-    z-index: 1; /* Ensure it's between the main video and the Instagram embed */
+    z-index: 4; /* Ensure it's between the main video and the Instagram embed */
 }
 
 .grain-video{
@@ -101,6 +101,7 @@ main p {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    opacity: 40%;
 }
 /* Overlay video styling */
 .overlay-video {

@@ -66,15 +66,41 @@ main p {
 
 
 
-/* Embeded Ig post */
-.instagram-embed-wrapper {
-    padding-left: 0; /* Add padding to the left */
-    /* Or to center the embed and add padding uniformly, you could use: */
-    /* padding: 20px; */
-    /* margin: auto; */
-    max-width: 540px; /* This can be adjusted to fit the embed's width or left out for full width */
-    margin: 0 auto; /* This centers the wrapper if max-width is set */
+
+
+/* Container for both video and Instagram embed */
+.video-instagram-container {
+    position: relative;
+    width: 540px; /* Set to match the Instagram embed's width or adjust as needed */
+    margin: 0 auto; /* Center the container */
 }
+
+/* Styling for video container */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Occupy the full width of the parent container */
+    height: 100%; /* Occupy the full height of the parent container */
+    z-index: 2; /* Ensure video is above the Instagram embed */
+}
+
+/* Overlay video styling */
+.overlay-video {
+    width: 100%; /* Occupy the full width of the video container */
+    height: 100%; /* Occupy the full height of the video container */
+    pointer-events: none; /* Make the video unclickable, allowing clicks to pass through */
+}
+
+/* Instagram Embed Wrapper */
+.instagram-embed-wrapper {
+    position: relative; /* Establish a stacking context */
+    z-index: 1; /* Ensure Instagram embed is below the video but above anything else */
+    max-width: 540px; /* Match the video and container width */
+    margin: 0 auto; /* Center the embed if needed */
+}
+
+
 
 
 /* Link Styles */

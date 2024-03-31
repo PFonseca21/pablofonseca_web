@@ -92,7 +92,8 @@ main p {
     position: absolute;
     top: 55px;
     pointer-events: none;
-    z-index: 2;
+    z-index: 4;
+    opacity: 55%;
 }
 /* Overlay video styling */
 .overlay-video {

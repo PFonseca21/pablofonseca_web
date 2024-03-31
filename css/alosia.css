@@ -83,7 +83,7 @@ main p {
     position: absolute;
     top: 55px;
     pointer-events: none;
-    z-index: 2;
+    z-index: 3;
 }
 
 /* Overlay video styling */
@@ -92,6 +92,21 @@ main p {
     height: 100%; /* Occupy the full height of the video container */
     pointer-events: none; /* Make the video unclickable, allowing clicks to pass through */
 }
+
+/* Blurry layer */
+.blurry-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 673px;
+    height: 673px;
+    background: rgba(255, 255, 255, 0.5); /* Adjust color and opacity */
+    z-index: 2; /* Ensure it's above the embed but below the video */
+
+    /* Optional: Apply a blur effect */
+    backdrop-filter: blur(5px);
+}
+
 
 /* Instagram Embed Wrapper */
 .instagram-embed-wrapper {

@@ -9,7 +9,7 @@ body{
     margin: 0;
     font-family:"Rubik Glitch", sans-serif;
     color: #363837 ;
-    background-color: #E94E18;
+    background-color: #E8834D;
     font-size: 20px;
     font-weight: 400; /* Adjusted for consistency */
     line-height: 1,5; /* Using a unitless value for line-height */
@@ -19,8 +19,8 @@ body{
 }
 
 body{
-    background-image: url("../img/Grunge3.png");
-    background-blend-mode: multiply; /* Blends the texture with the background color */
+    background-image: url("../img/Grunge 2.png");
+    background-blend-mode: difference; /* Blends the texture with the background color */
     background-size: cover; /* Or 'repeat' if you want to tile a smaller texture */
 
 }
@@ -46,6 +46,7 @@ header::after{
     background: url(../img/rip.png) bottom no-repeat;
     background-position: bottom;
     z-index: -1;
+    filter: drop-shadow(2px 4px 6px black);
 }
 
 header{
@@ -78,6 +79,7 @@ main h2, main p {
     font-weight: 400;
     color: #D9C50C;
     padding-left: 5%;
+    padding-top: 20px;
 }
 
 main p {

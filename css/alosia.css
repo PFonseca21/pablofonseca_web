@@ -22,7 +22,6 @@ body{
     background-image: url("../img/Grunge 2.png");
     background-blend-mode: difference; /* Blends the texture with the background color */
     background-size: cover; /* Or 'repeat' if you want to tile a smaller texture */
-
 }
 
 /* Header Styles */
@@ -34,8 +33,12 @@ header{
     padding-top: 50px 0 20px;
     padding-bottom: 20px; /* Shorthand for padding */
     width: 100%;
+    overflow: hidden;
 }
 
+
+
+/* Other header styles */
 header::after{
     content: "";
     position: absolute;
@@ -61,10 +64,59 @@ header h1{
     font-size: 90px;
 }
 
-header img{
+
+
+
+/* GLITCH EFFECT */
+
+header img {
     width: 500px;
-    padding-top: 20px;
+    visibility: hidden;
 }
+
+.glitch {
+    width: 500px;
+    display: inline-block;
+    margin: 40px auto;
+    background-image: url(../img/alosia.png);
+    background-size: 500px auto;
+    animation: glitch 3.5s infinite steps(1);
+    overflow: hidden;
+}
+
+
+@keyframes glitch{
+    0%, 100% {
+        background: url("../img/alosia.png");
+        background-size: cover;
+    }
+    
+    92.5% {
+        background: url("../img/glitch1.png");
+        background-size: cover;
+        opacity: 1;
+    }
+    
+    95% {
+        background: url("../img/glitch2.png");
+        background-size: cover;
+        opacity: 0;
+    }
+        
+    97.5% {
+        background: url("../img/glitch3.png");
+        background-size: cover;
+        opacity: 1;
+
+    }
+
+}
+
+
+
+
+
+
 
 
 /* Main Content Styles */

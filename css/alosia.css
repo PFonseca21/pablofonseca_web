@@ -1,31 +1,24 @@
-/* Golden Ratio */
-main {
-    min-height: 60vh; /* Adjust as needed */
-}
 
 /* Base Styles */
+    body{
+        margin: 0;
+        font-family:"Rubik Glitch", sans-serif;
+        color: #363837 ;
+        background-color: #A4F9FE;
+        font-size: 1.25em; /* Adjust based on the base font size, assuming 16px default */
+        font-weight: 400; /* Adjusted for consistency */
+        line-height: 1.5; /* Using a unitless value for line-height */
+        display: flex;
+        flex-direction: column;
+        /* Texture*/
+        background-image: url("../img/Grunge5.png");
+        background-blend-mode: multiply; /* Blends the texture with the background color */
+        background-size: cover; /* Or 'repeat' if you want to tile a smaller texture */
+    }
 
-body{
-    margin: 0;
-    font-family:"Rubik Glitch", sans-serif;
-    color: #363837 ;
-    background-color: #E8834D;
-    font-size: 20px;
-    font-weight: 400; /* Adjusted for consistency */
-    line-height: 1,5; /* Using a unitless value for line-height */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
 
-body{
-    background-image: url("../img/Grunge 2.png");
-    background-blend-mode: difference; /* Blends the texture with the background color */
-    background-size: cover; /* Or 'repeat' if you want to tile a smaller texture */
-}
 
 /* Header Styles */
-
 header{
     position:relative;
     background-color: #D9C50C;
@@ -33,26 +26,7 @@ header{
     padding-top: 50px 0 20px;
     padding-bottom: 20px; /* Shorthand for padding */
     width: 100%;
-    overflow: hidden;
-}
-
-
-
-/* Other header styles */
-header::after{
-    content: "";
-    position: absolute;
-    bottom: -280px;
-    left: 0;
-    width: 100%;
-    height: 33%;
-    background: url(../img/rip.png) bottom no-repeat;
-    background-position: bottom;
-    z-index: -1;
-    filter: drop-shadow(2px 4px 6px black);
-}
-
-header{
+    /* texture */
     background-image: url("../img/Grunge.png");
     background-blend-mode: multiply; /* Blends the texture with the background color */
     background-size: cover; /* Or 'repeat' if you want to tile a smaller texture */
@@ -61,60 +35,71 @@ header{
 header h1{
     color: #E94E18;
     font-weight: 400; /* Adjusted for consistency */
-    font-size: 90px;
+    font-size: 5.625em; /* 90px equivalent if base size is 16px */
+}
+
+header img{
+    visibility: hidden; /* Mantain img alignment, hide img to show background (head::after) */
+}
+
+header img, .glitch {
+    width: 31.25vw; /* 500px equivalent if the full viewport width is 1600px */
+    max-width: 500px; /* Ensures the image doesn't scale indefinitely */
 }
 
 
-
-
-/* GLITCH EFFECT */
-
-header img {
-    width: 500px;
-    visibility: hidden;
-}
-
-.glitch {
-    width: 500px;
+    /* Glitch effect */
+    .glitch {
     display: inline-block;
     margin: 40px auto;
     background-image: url(../img/alosia.png);
     background-size: 500px auto;
     animation: glitch 3.5s infinite steps(1);
     overflow: hidden;
-}
+    }
 
-
-@keyframes glitch{
-    0%, 100% {
-        background: url("../img/alosia.png");
-        background-size: cover;
-    }
+    /* Keyframes for glitch animation */
+    @keyframes glitch{
+        0%, 100% {
+            background: url("../img/alosia.png");
+            background-size: cover;
+        }
     
-    92.5% {
-        background: url("../img/glitch1.png");
-        background-size: cover;
-        opacity: 1;
-    }
+        92.5% {
+            background: url("../img/glitch1.png");
+            background-size: cover;
+            opacity: 1;
+        }
     
-    95% {
-        background: url("../img/glitch2.png");
-        background-size: cover;
-        opacity: 0;
-    }
+        95% {
+            background: url("../img/glitch2.png");
+            background-size: cover;
+            opacity: 0;
+        }
         
-    97.5% {
-        background: url("../img/glitch3.png");
-        background-size: cover;
-        opacity: 1;
+        97.5% {
+            background: url("../img/glitch3.png");
+            background-size: cover;
+            opacity: 1;
+
+        }
 
     }
 
-}
 
-
-
-
+    /* Ripped paper */
+    header::after{
+        content: "";
+        position: absolute;
+        bottom: -280;
+        left: 0;
+        width: 100%;
+        height: 33%;
+        background: url(../img/rip.png) bottom no-repeat;
+        background-position: bottom;
+        z-index: -1;
+        filter: drop-shadow(2px 4px 6px black);
+        }
 
 
 
@@ -239,4 +224,62 @@ footer p{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
     color: #E94E18;
     font-weight:bold
+}
+
+
+/* Media Queries */
+
+/* Phones (portrait mode)*/
+@media (max-width: 600px) {
+    body {
+        font-size: 0.9rem; /* Smaller base font size */
+    }
+
+    header h1 {
+        font-size: 4rem; /* Adjust the heading size to fit smaller screens */
+    }
+
+    .glitch, header img {
+        width: 80vw; /* Make the glitch effect and images larger relative to the viewport */
+        max-width: 400px; /* Optional: Set a max-width to prevent it from becoming too large */
+    }
+
+    /* Adjust the main content layout and text sizes for better readability */
+    main h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 5rem; /* Slightly larger headings for tablets */
+    }
+
+    .glitch, header img {
+        width: 50vw; /* Adjust the width of the glitch effect and images */
+        max-width: 500px;
+    }
+
+    main {
+        padding: 0 5%; /* Add some padding on the sides for better spacing */
+    }
+
+    main h2 {
+        font-size: 3rem; /* Adjust main heading size */
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    main {
+        max-width: 1200px; /* Set a max-width for the main content */
+        margin: 0 auto; /* Center the main content */
+        padding: 0 20px; /* Add some padding */
+    }
+
+    .video-instagram-container {
+        width: 80%; /* Adjust the video and Instagram embed container size */
+        max-width: 800px; /* Optional: Set a max-width */
+    }
 }

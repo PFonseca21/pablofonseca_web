@@ -211,7 +211,6 @@ main p {
 a{
     color: #363837;
     font-size: 30px;
-    padding-left: 5%;
 }
 
 a:hover{
@@ -222,7 +221,6 @@ a:hover{
 /* Footer Styles */
 
 footer{
-    background-color: #D8CF88;
     text-align: center;
     padding: 10px 0; /* Adds more vertical space */
     font-size: 1.5rem; /* Increases readability */
@@ -234,8 +232,24 @@ footer p{
     margin: 0;
     font-size: small;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
-    color: #E94E18;
+    color: #D9C50C;
     font-weight:bold
+}
+
+footer a{
+    color: #A4F9FE;
+    font-size: small;
+    font-weight: bold;
+}
+
+.robotto{
+    font-family: "Roboto Mono", Sans-serif;
+    font-weight: lighter;
+}
+
+.montserrat{
+    font-family: "Montserrat", garamon;
+    font-weight: lighter;
 }
 
 
@@ -286,8 +300,8 @@ footer p{
 @media (min-width: 1025px) {
     main {
         max-width: 1200px; /* Set a max-width for the main content */
-        margin: 0 auto; /* Center the main content */
-        padding: 0 20px; /* Add some padding */
+        margin: auto; /* Center the main content */
+        padding: 20px; /* Add some padding */
     }
 
     .video-instagram-container {

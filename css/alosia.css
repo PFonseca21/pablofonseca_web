@@ -39,8 +39,10 @@ header h1{
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    background-image: url(../img/grunge2.jpg);
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 100%, transparent 100%);
+    background-image: url(../img/grunge01.jpg);
+    -webkit-text-fill-color: transparent;
+    background-position: 70% 52%;
+    background-size: cover;
 }
 
 header img{
@@ -117,10 +119,16 @@ main{
 }
 
 main h2, main p {
-    font-size: 4em;
-    font-weight: 400;
-    color: #D9C50C;
+    font-size: 5em;
+    font-weight: 100;
     padding-top: 2vw;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url(../img/Grunge.jpg);
+    background-position: 43% 85%;
+    background-size: contain;
+    font-style: italic;
 }
 
 main p {

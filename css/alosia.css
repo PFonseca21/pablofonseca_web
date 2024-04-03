@@ -209,8 +209,14 @@ main p {
 
 /* Link Styles */
 a{
-    color: #363837;
     font-size: 30px;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url(../img/Grunge.jpg);
+    background-position: 43% 85%;
+    background-size: contain;
+    font-style: italic;
 }
 
 a:hover{

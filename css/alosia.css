@@ -11,7 +11,7 @@
         display: flex;
         flex-direction: column;
         /* Texture*/
-        background-image: url("../img/Grunge5.png");
+        background-image: url("../img/Grunge5.jpg");
         background-blend-mode: multiply; /* Blends the texture with the background color */
         background-size: cover; /* Or 'repeat' if you want to tile a smaller texture */
     }
@@ -27,15 +27,20 @@ header{
     padding-bottom: 20px; /* Shorthand for padding */
     width: 100%;
     /* texture */
-    background-image: url("../img/Grunge.png");
+    background-image: url("../img/Grunge.jpg");
     background-blend-mode: multiply; /* Blends the texture with the background color */
     background-size: cover; /* Or 'repeat' if you want to tile a smaller texture */
 }
 
 header h1{
     color: #E94E18;
-    font-weight: 400; /* Adjusted for consistency */
-    font-size: 5.625em; /* 90px equivalent if base size is 16px */
+    font-weight: 400;
+    font-size: 6.625em;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url(../img/grunge2.jpg);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 100%, transparent 100%);
 }
 
 header img{
@@ -91,10 +96,10 @@ header img, .glitch {
     header::after{
         content: "";
         position: absolute;
-        bottom: -280;
+        bottom: -280px;
         left: 0;
         width: 100%;
-        height: 33%;
+        height: 66%;
         background: url(../img/rip.png) bottom no-repeat;
         background-position: bottom;
         z-index: -1;
@@ -112,11 +117,10 @@ main{
 }
 
 main h2, main p {
-    font-size: 70px;
+    font-size: 4em;
     font-weight: 400;
     color: #D9C50C;
-    padding-left: 5%;
-    padding-top: 20px;
+    padding-top: 2vw;
 }
 
 main p {

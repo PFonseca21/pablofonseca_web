@@ -116,6 +116,7 @@ main{
     max-width: 100%;   
     margin: 0 auto;
     flex: 1; /* Allows main content to grow and push footer down */
+    padding-bottom: 1vw;
 }
 
 main h2, main p {
@@ -308,6 +309,7 @@ footer a{
         max-width: 1200px; /* Set a max-width for the main content */
         margin: auto; /* Center the main content */
         padding: 20px; /* Add some padding */
+        padding-bottom: 1vw;
     }
 
     .video-instagram-container {

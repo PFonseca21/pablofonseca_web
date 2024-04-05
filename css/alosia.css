@@ -290,10 +290,6 @@ footer a{
     main h2 {
         font-size: 2.5rem;
     }
-
-    main{
-        padding-bottom: 12vw;
-    }
 }
 
 /* Tablets */
@@ -309,10 +305,6 @@ footer a{
 
     main h2 {
         font-size: 3rem; /* Adjust main heading size */
-    }
-
-    main{
-        padding-bottom: 12vw;
     }
 }
 

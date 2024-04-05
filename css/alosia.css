@@ -290,6 +290,10 @@ footer a{
     main h2 {
         font-size: 2.5rem;
     }
+
+    main{
+        padding-bottom: 12vw;
+    }
 }
 
 /* Tablets */
@@ -306,6 +310,10 @@ footer a{
     main h2 {
         font-size: 3rem; /* Adjust main heading size */
     }
+
+    main{
+        padding-bottom: 12vw;
+    }
 }
 
 /* Desktop */
@@ -313,7 +321,7 @@ footer a{
     main {
         max-width: 1200px; /* Set a max-width for the main content */
         margin: auto; /* Center the main content */
-        padding-bottom: 1vw;
+        padding-bottom: 12vw;
     }
 
     .video-instagram-container {

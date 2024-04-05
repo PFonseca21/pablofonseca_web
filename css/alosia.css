@@ -117,7 +117,7 @@ main{
     display: flex;
     flex-direction: column;
     flex: 1; /* Allows main content to grow and push footer down */
-    padding-bottom: 6vw;
+    padding-bottom: 12vw;
 }
 
 main h2, main p {
@@ -210,7 +210,7 @@ main p {
     width: 100%; /* Ocupa todo el ancho disponible */
     text-align: left; /* Centra el texto */
     position: relative;
-    top: 130px; /* Espacio después del contenedor de video/Instagram */
+    top: 12vw; /* Espacio después del contenedor de video/Instagram */
     margin-top: auto
 }
 

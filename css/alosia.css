@@ -208,8 +208,10 @@ main p {
 /* Explanation Section */
 .explanation {
     width: 100%; /* Ocupa todo el ancho disponible */
-    text-align: center; /* Centra el texto */
-    margin-top: 20px; /* Espacio después del contenedor de video/Instagram */
+    text-align: left; /* Centra el texto */
+    position: relative;
+    top: 500px; /* Espacio después del contenedor de video/Instagram */
+    margin-top: 20px
 }
 
 

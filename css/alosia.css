@@ -114,7 +114,8 @@ header img, .glitch {
 /* Main Content Styles */
 main{
     max-width: 100%;   
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     flex: 1; /* Allows main content to grow and push footer down */
     padding-bottom: 1vw;
 }
@@ -145,6 +146,7 @@ main p {
 .video-instagram-container {
     position: relative;
     width: 540px; /* Set to match the Instagram embed's width or adjust as needed */
+    height: 673px;
     margin: 0 auto; /* Center the container */
 }
 
@@ -152,7 +154,7 @@ main p {
 .video-container {
     max-width: 673px;
     width: 100%;
-    height: 673px;
+    height: 100%;
     position: absolute;
     top: 55px;
     pointer-events: none;
@@ -160,8 +162,8 @@ main p {
 }
 
 .grain-video-frame{
-    width: 540px;  /* Width of the visible area, adjust as needed */
-    height: 673px; /* Height of the visible area, adjust as needed */
+    width: 100%;  /* Width of the visible area, adjust as needed */
+    height: 100%x; /* Height of the visible area, adjust as needed */
     overflow: hidden; /* Ensures only the part of the video within this frame is visible */
     position: absolute; /* To overlay within the video-instagram-container */
     top: 55px; /* Adjust based on desired position */
@@ -171,8 +173,8 @@ main p {
 }
 
 .grain-video {
-    width: 100%;
-    height: 100%;
+    width: 540px;
+    height: 673px;
     object-fit: cover;
     object-position: center;
     opacity: 40%;
@@ -180,8 +182,8 @@ main p {
 }
 
 .burn-video{
-    width: 100%;
-    height: 100%;
+    width: 540px;
+    height: 673px;
     object-fit: cover;
     object-position: center;
     opacity: 10%;
@@ -193,19 +195,26 @@ main p {
     width: 100%; /* Occupy the full width of the video container */
     height: 100%; /* Occupy the full height of the video container */
     pointer-events: none; /* Make the video unclickable, allowing clicks to pass through */
+    object-fit: cover;
 }
 
 
 
 /* Instagram Embed Wrapper */
 .instagram-embed-wrapper {
-    position: relative; /* Establish a stacking context */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 1; /* Ensure Instagram embed is below the video but above anything else */
     max-width: 540px; /* Match the video and container width */
-    margin: 0 auto; /* Center the embed if needed */
 }
 
-
+/* Explanation Section */
+.explanation {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    text-align: center; /* Centra el texto */
+    margin-top: 20px; /* Espacio después del contenedor de video/Instagram */
+}
 
 
 /* Link Styles */

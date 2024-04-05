@@ -81,26 +81,12 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-    adjustExplanationPosition();
-    window.addEventListener('resize', adjustExplanationPosition); // Ajustar en caso de redimensionar la ventana
-});
-
-function adjustExplanationPosition() {
-    // Calcular la altura de la ventana del navegador
-    var viewportHeight = window.innerHeight;
-
-    // Calcular la posición inferior de <main>
     var main = document.querySelector('main');
-    var mainBottom = main.offsetTop + main.offsetHeight;
+    var explanation = document.querySelector('.explanation');
 
-    // Seleccionar la sección .explanation
-    var explanationSection = document.querySelector('.explanation');
-
-    // Ajustar el margen superior de .explanation basado en la posición inferior de <main>
-    // y asegurarse de que comience justo debajo de este
-    explanationSection.style.marginTop = (mainBottom - viewportHeight) + 'px';
-}
-
+    // Coloca .explanation justo después de <main> en el DOM
+    main.parentNode.insertBefore(explanation, main.nextSibling);
+});
     </script>
     
 </body>

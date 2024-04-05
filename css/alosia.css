@@ -120,6 +120,13 @@ main{
     padding-bottom: 12vw;
 }
 
+main h2 {
+    position: sticky;
+    top: 10px;
+    z-index: 5;
+}
+
+
 main h2, main p {
     font-size: 5em;
     font-weight: 100;
@@ -139,17 +146,56 @@ main p {
 }
 
 
+/* Marquesina (container, glass & frame)*/
+
+/*Container/frame */
+.marquesina-frame {
+    border: 30px solid black;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 20px auto;
+    width: 540px;
+    height: 871px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+    transition: 0.5s;
+    border-radius: 40px;
+    z-index: 6;
+    background: grey;
+}
+/* Glass */
+.marquesina-frame::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    pointer-events: none;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
+}
 
 
-
-/* Container for both video and Instagram embed */
-.video-instagram-container {
+/* Structure of making-off (content 1) */
+.making-off {
     position: relative;
     width: 540px; /* Set to match the Instagram embed's width or adjust as needed */
     height: 673px;
     margin: 0 auto; /* Center the container */
 }
-
 /* Styling for video container */
 .video-container {
     max-width: 673px;
@@ -160,7 +206,6 @@ main p {
     pointer-events: none;
     z-index: 3;
 }
-
 .grain-video-frame{
     width: 100%;  /* Width of the visible area, adjust as needed */
     height: 100%; /* Height of the visible area, adjust as needed */
@@ -170,22 +215,20 @@ main p {
     left: 0; /* Adjust based on desired position */
     z-index: 5; /* Ensure it's between the main video and the Instagram embed */
     opacity: 100%;
+    pointer-events: none;
 }
-
 .grain-video {
     object-fit: cover;
     object-position: center;
     opacity: 40%;
     z-index: 4;
 }
-
 .burn-video{
     object-fit: cover;
     object-position: center;
     opacity: 10%;
     z-index: 3;
 }
-
 /* Overlay video styling */
 .overlay-video {
     width: 100%; /* Occupy the full width of the video container */
@@ -193,9 +236,6 @@ main p {
     pointer-events: none; /* Make the video unclickable, allowing clicks to pass through */
     object-fit: cover;
 }
-
-
-
 /* Instagram Embed Wrapper */
 .instagram-embed-wrapper {
     display: flex;
@@ -204,6 +244,11 @@ main p {
     z-index: 1; /* Ensure Instagram embed is below the video but above anything else */
     max-width: 540px; /* Match the video and container width */
 }
+
+
+
+
+
 
 /* Explanation Section */
 .explanation {
@@ -320,7 +365,7 @@ footer a{
         padding-bottom: 12vw;
     }
 
-    .video-instagram-container {
+    .making-off {
         width: 540px; /* Adjust the video and Instagram embed container size */
         max-width: 800px; /* Optional: Set a max-width */
     }

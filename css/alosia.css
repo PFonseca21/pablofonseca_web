@@ -163,7 +163,7 @@ main p {
 
 .grain-video-frame{
     width: 100%;  /* Width of the visible area, adjust as needed */
-    height: 100%x; /* Height of the visible area, adjust as needed */
+    height: 100%; /* Height of the visible area, adjust as needed */
     overflow: hidden; /* Ensures only the part of the video within this frame is visible */
     position: absolute; /* To overlay within the video-instagram-container */
     top: 55px; /* Adjust based on desired position */
@@ -173,8 +173,6 @@ main p {
 }
 
 .grain-video {
-    width: 540px;
-    height: 673px;
     object-fit: cover;
     object-position: center;
     opacity: 40%;
@@ -182,8 +180,6 @@ main p {
 }
 
 .burn-video{
-    width: 540px;
-    height: 673px;
     object-fit: cover;
     object-position: center;
     opacity: 10%;
@@ -303,10 +299,6 @@ footer a{
         max-width: 500px;
     }
 
-    main {
-        padding: 0 5%; /* Add some padding on the sides for better spacing */
-    }
-
     main h2 {
         font-size: 3rem; /* Adjust main heading size */
     }
@@ -317,12 +309,11 @@ footer a{
     main {
         max-width: 1200px; /* Set a max-width for the main content */
         margin: auto; /* Center the main content */
-        padding: 20px; /* Add some padding */
         padding-bottom: 1vw;
     }
 
     .video-instagram-container {
-        width: 80%; /* Adjust the video and Instagram embed container size */
+        width: 540px; /* Adjust the video and Instagram embed container size */
         max-width: 800px; /* Optional: Set a max-width */
     }
 }

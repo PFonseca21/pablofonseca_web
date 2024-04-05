@@ -81,12 +81,13 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-    var main = document.querySelector('main');
+    var mainHeight = document.querySelector('main').offsetHeight; // Obtiene la altura total de <main>
     var explanation = document.querySelector('.explanation');
 
-    // Coloca .explanation justo después de <main> en el DOM
-    main.parentNode.insertBefore(explanation, main.nextSibling);
+    // Establece el margen superior de .explanation para que comience justo después de <main>
+    explanation.style.marginTop = mainHeight + 'px';
 });
+
     </script>
     
 </body>

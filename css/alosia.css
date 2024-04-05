@@ -117,7 +117,7 @@ main{
     display: flex;
     flex-direction: column;
     flex: 1; /* Allows main content to grow and push footer down */
-    padding-bottom: 1vw;
+    padding-bottom: 6vw;
 }
 
 main h2, main p {
@@ -210,8 +210,8 @@ main p {
     width: 100%; /* Ocupa todo el ancho disponible */
     text-align: left; /* Centra el texto */
     position: relative;
-    top: 500px; /* Espacio después del contenedor de video/Instagram */
-    margin-top: 20px
+    top: 130px; /* Espacio después del contenedor de video/Instagram */
+    margin-top: auto
 }
 
 
@@ -240,6 +240,8 @@ footer{
     font-size: 1.5rem; /* Increases readability */
     position: relative; /* Adjust based on layout needs */
     width: 100%;
+    clear: both;
+    margin-top: 20px;
 }
 
 footer p{

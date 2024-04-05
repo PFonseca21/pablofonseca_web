@@ -60,18 +60,18 @@
             <script async src="//www.instagram.com/embed.js"></script>
         </div>
     </div>
-        
-        <!-- Explanation Section-->
-            <section class="explanation">
-            <p>Why and where?</p>
-            <ul>
-                <li><a target="_blank" href="https://www.instagram.com/p/C4_PtJpKghy/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">First appearance</a></li>
-                <li><a target="_blank" href="https://www.instagram.com/p/C5GO8hUq7Xb/?img_index=1">What's next?</a></li>
-                <li><a target="_blank" href="">Where can I see the piece now? (comming soon)</a></li>
-            </ul>
-        </section>
-    </main>
-
+ </main>        
+    
+ <!-- Explanation Section-->
+    <section class="explanation">
+    <p>Why and where?</p>
+        <ul>
+            <li><a target="_blank" href="https://www.instagram.com/p/C4_PtJpKghy/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">First appearance</a></li>
+            <li><a target="_blank" href="https://www.instagram.com/p/C5GO8hUq7Xb/?img_index=1">What's next?</a></li>
+            <li><a target="_blank" href="">Where can I see the piece now? (comming soon)</a></li>
+        </ul>
+    </section>
+   
     <!-- Footer -->
    <footer>
         <p>Stay tuned to find out more about this @balu_art project & future collaborations. You can follow the artists @gemalpu & @balu_art on ig.
@@ -79,5 +79,21 @@
         </p> 
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            adjustExplanationMargin();
+    
+            // Ajusta el margen superior cuando la ventana se redimensiona
+            window.addEventListener('resize', adjustExplanationMargin);
+        });
+    
+        function adjustExplanationMargin() {
+            var mainHeight = document.querySelector('main').offsetHeight; // Altura de <main>
+            var explanationSection = document.querySelector('.explanation'); // Sección .explanation
+    
+            explanationSection.style.marginTop = mainHeight + 'px'; // Ajusta el margen superior
+        }
+    </script>
+    
 </body>
 </html>

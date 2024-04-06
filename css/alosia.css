@@ -157,7 +157,6 @@ main p {
     cursor: pointer;
     transition: transform 0.2s ease;
     width: 20%;
-    display: inline-block;
     left: calc(50% - 109.25px);
     position: sticky;
     top: 200px;

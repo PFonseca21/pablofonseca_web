@@ -2,40 +2,37 @@
 /* Base Styles */
     body{
         margin: 0;
-        font-family:"Rubik Glitch", sans-serif;
-        color: #363837 ;
+        font-family: "Rubik Glitch", sans-serif;
+        color: #363837;
         background-color: #A4F9FE;
-        font-size: 1.25em; /* Adjust based on the base font size, assuming 16px default */
-        font-weight: 400; /* Adjusted for consistency */
-        line-height: 1.5; /* Using a unitless value for line-height */
+        font-size: 1.25em;
+        font-weight: 400;
+        line-height: 1.5;
         display: flex;
         flex-direction: column;
-        /* Texture*/
-        background-image: url("../img/Grunge5.jpg");
-        background-blend-mode: multiply; /* Blends the texture with the background color */
-        background-size: cover; /* Or 'repeat' if you want to tile a smaller texture */
+        background-image: url(../img/Grunge5.jpg);
+        background-blend-mode: multiply;
+        background-size: cover;
     }
 
 
 
 /* Header Styles */
 header{
-    position:relative;
+    position: relative;
     background-color: #D9C50C;
     text-align: center;
-    padding-top: 50px 0 20px;
-    padding-bottom: 20px; /* Shorthand for padding */
+    padding-bottom: 20px;
     width: 100%;
-    /* texture */
-    background-image: url("../img/Grunge.jpg");
-    background-blend-mode: multiply; /* Blends the texture with the background color */
-    background-size: cover; /* Or 'repeat' if you want to tile a smaller texture */
+    background-image: url(../img/Grunge.jpg);
+    background-blend-mode: multiply;
+    background-size: cover;
+    height: 100vh;
 }
 
 header h1{
-    color: #E94E18;
     font-weight: 400;
-    font-size: 6.625em;
+    font-size: 6em;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -57,12 +54,13 @@ header img, .glitch {
 
     /* Glitch effect */
     .glitch {
-    display: inline-block;
-    margin-top: 40px;
-    background-image: url(../img/alosia.png);
-    background-size: 500px auto;
-    animation: glitch 3.5s infinite steps(1);
-    overflow: hidden;
+        display: inline-block;
+        margin-top: 90px;
+        background-image: url(../img/alosia.png);
+        background-size: 500px auto;
+        animation: glitch 3.5s infinite steps(1);
+        overflow: hidden;
+        height: 50vh;
     }
 
     /* Keyframes for glitch animation */
@@ -127,7 +125,7 @@ main h2 {
 
 
 main h2, main p {
-    font-size: 5em;
+    font-size: 4.5em;
     font-weight: 100;
     padding-top: 2vw;
     color: transparent;
@@ -360,7 +358,6 @@ footer a{
     main {
         max-width: 1200px; /* Set a max-width for the main content */
         margin: auto; /* Center the main content */
-        padding-bottom: 12vw;
     }
 
     .making-off {

@@ -117,13 +117,12 @@ main{
     display: flex;
     flex-direction: column;
     flex: 1; /* Allows main content to grow and push footer down */
-    padding-bottom: 12vw;
 }
 
 main h2 {
     position: sticky;
-    top: 100px;
-    z-index: 4;
+    top: 35px;
+    z-index: 7;
 }
 
 
@@ -160,9 +159,9 @@ main p {
     width: 20%;
     display: inline-block;
     left: calc(50% - 109.25px);
-    position: relative;
-    top: -40px;
-    z-index: 6;
+    position: sticky;
+    top: 200px;
+    z-index: 7;
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
     border-top: 1px solid rgba(0, 0, 0, 0.5);
     border-left: 1px solid rgba(0, 0, 0, 0.5);
@@ -233,29 +232,6 @@ main p {
     pointer-events: none;
     z-index: 3;
 }
-.grain-video-frame{
-    width: 100%;  /* Width of the visible area, adjust as needed */
-    height: 100%; /* Height of the visible area, adjust as needed */
-    overflow: hidden; /* Ensures only the part of the video within this frame is visible */
-    position: absolute; /* To overlay within the video-instagram-container */
-    top: 55px; /* Adjust based on desired position */
-    left: 0; /* Adjust based on desired position */
-    z-index: 5; /* Ensure it's between the main video and the Instagram embed */
-    opacity: 100%;
-    pointer-events: none;
-}
-.grain-video {
-    object-fit: cover;
-    object-position: center;
-    opacity: 40%;
-    z-index: 4;
-}
-.burn-video{
-    object-fit: cover;
-    object-position: center;
-    opacity: 10%;
-    z-index: 3;
-}
 /* Overlay video styling */
 .overlay-video {
     width: 100%; /* Occupy the full width of the video container */
@@ -282,8 +258,7 @@ main p {
     width: 100%; /* Ocupa todo el ancho disponible */
     text-align: left; /* Centra el texto */
     position: relative;
-    top: 12vw; /* Espacio después del contenedor de video/Instagram */
-    margin-top: auto
+    margin-top: 1vw
 }
 
 

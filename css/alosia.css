@@ -58,7 +58,7 @@ header img, .glitch {
     /* Glitch effect */
     .glitch {
     display: inline-block;
-    margin: 40px auto;
+    margin-top: 40px;
     background-image: url(../img/alosia.png);
     background-size: 500px auto;
     animation: glitch 3.5s infinite steps(1);
@@ -122,7 +122,7 @@ main{
 
 main h2 {
     position: sticky;
-    top: 10px;
+    top: 100px;
     z-index: 7;
 }
 
@@ -341,9 +341,6 @@ footer a{
         font-size: 2.5rem;
     }
 
-    .explanation{
-        padding-top: 3vw;
-    }
 }
 
 /* Tablets */

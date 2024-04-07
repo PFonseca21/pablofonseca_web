@@ -52,7 +52,15 @@ header img, .glitch {
 }
 
 
-    /* Glitch effect */
+/* ---------------------------- ANIMATION SECTION ---------------------------- */
+
+    /* Ojo cutout.png */
+    .cutout{
+        display: inline;
+    }
+
+
+    /* Original glitch effect */
     .glitch {
         display: inline-block;
         margin-top: 90px;
@@ -90,6 +98,51 @@ header img, .glitch {
         }
 
     }
+
+    .glitch-alt{        
+        display: inline-block;
+        margin-top: 90px;
+        background-image: url(../img/replace-alosia.png);
+        background-size: 500px auto;
+        animation: glitch-alt 3.5s infinite steps(1);
+        overflow: hidden;
+        height: 50vh;;
+    }
+
+    @keyframes glitch-alt{
+        0%, 100% {
+            background: url("../img/replace-alosia.png");
+            background-size: cover;
+        }
+    
+        92.5% {
+            background: url("../img/replace-glitch1.png");
+            background-size: cover;
+            opacity: 1;
+        }
+    
+        95% {
+            background: url("../img/replace-glitch2.png");
+            background-size: cover;
+            opacity: 0;
+        }
+        
+        97.5% {
+            background: url("../img/replace-glitch3.png");
+            background-size: cover;
+            opacity: 1;
+
+        }
+
+    }
+
+
+
+
+
+
+
+
 
 
     /* Ripped paper */

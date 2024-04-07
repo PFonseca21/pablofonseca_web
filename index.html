@@ -20,9 +20,10 @@
     <header>
         <div class="glitch">
             <img src="img/alosia.png" alt="Image of the piece ALOSIA by @balu_art and @gemalpu">
+            <button id="cut-here">Cut Here</button>
         </div>
+        
         <h1>ALOSIA</h1>
-    
     </header>
     
     <!-- Main Content-->
@@ -31,7 +32,7 @@
 
         <!-- Button -->
         <button class="btn-trans">Wanna see what's inside?</button>       
-        
+
     <!-- Marquesina (frame & glass) -->
     <div class="marquesina-frame">
         
@@ -73,6 +74,22 @@
             Find out more of their work at <a class="robotto" target="_blank" href="//canal-gallery.com/artistas/balu">Canal galery.com</a> and <a class="montserrat" target="_blank" href="//www.gemalpu.com/">Gemalpu.com</a>
         </p> 
     </footer>
+
+
+
+
+
+
+<!-- ______________________________ JAVASCRIPT SECTION ______________________________ -->
+
+<script>
+document.querySelector('.glitch').addEventListener('click', function() {
+    this.classList.remove('glitch');
+    this.classList.add('glitch-alt');
+});
+</script>
+
+
 
 </body>
 </html>

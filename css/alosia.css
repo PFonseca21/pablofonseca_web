@@ -136,8 +136,23 @@ header img, .glitch, .glitch-alt {
 
     }
 
+    .cutout-animation {
+        animation: moveCutout 1s forwards;
+    }
+    
+    @keyframes moveCutout {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(Xpx, Ypx); /* Reemplaza X e Y con los valores que necesites */
+        }
+    }
+    
 
 
+
+/* ---------------------------- END OF ANIMATIONS ---------------------------- */
 
 
 

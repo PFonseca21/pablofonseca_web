@@ -83,9 +83,17 @@
 <!-- ______________________________ JAVASCRIPT SECTION ______________________________ -->
 
 <script>
-document.querySelector('.glitch').addEventListener('click', function() {
-    this.classList.remove('glitch');
-    this.classList.add('glitch-alt');
+document.getElementById('cutoutBtn').addEventListener('click', function() {
+    // Cambia la clase de .glitch a .glitch-alt
+    var glitchElement = document.querySelector('.glitch');
+    if (glitchElement) {
+        glitchElement.classList.remove('glitch');
+        glitchElement.classList.add('glitch-alt');
+    }
+
+    // Inicia la animación del cutout
+    var cutoutElement = document.getElementById('cutout'); // Asegúrate de tener este elemento en tu HTML
+    cutoutElement.classList.add('cutout-animation');
 });
 </script>
 

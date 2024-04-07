@@ -46,7 +46,7 @@ header img{
     visibility: hidden; /* Mantain img alignment, hide img to show background (head::after) */
 }
 
-header img, .glitch {
+header img, .glitch, .glitch-alt {
     width: 31.25vw; /* 500px equivalent if the full viewport width is 1600px */
     max-width: 500px; /* Ensures the image doesn't scale indefinitely */
 }
@@ -378,7 +378,7 @@ footer a{
         font-size: 4rem; /* Adjust the heading size to fit smaller screens */
     }
 
-    .glitch, header img {
+    .glitch, header img, .glitch-alt {
         width: 80vw; /* Make the glitch effect and images larger relative to the viewport */
         max-width: 400px; /* Optional: Set a max-width to prevent it from becoming too large */
     }
@@ -396,8 +396,8 @@ footer a{
         font-size: 5rem; /* Slightly larger headings for tablets */
     }
 
-    .glitch, header img {
-        width: 50vw; /* Adjust the width of the glitch effect and images */
+    .glitch, header img, .glitch-alt {
+        width: 74vw; /* Adjust the width of the glitch effect and images */
         max-width: 500px;
     }
 

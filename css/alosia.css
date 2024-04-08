@@ -19,7 +19,10 @@
 
 /* Header Styles */
 header{
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #D9C50C;
     text-align: center;
     padding-bottom: 20px;
@@ -385,17 +388,13 @@ footer a{
 
 /* Phones (portrait mode)*/
 @media (max-width: 600px) {
-    body {
-        font-size: 0.9rem; /* Smaller base font size */
-    }
 
     header h1 {
-        font-size: 4rem; /* Adjust the heading size to fit smaller screens */
+        font-size: 3rem; /* Adjust the heading size to fit smaller screens */
     }
 
     .glitch, header img, .glitch-alt {
-        width: 80vw; /* Make the glitch effect and images larger relative to the viewport */
-        max-width: 400px; /* Optional: Set a max-width to prevent it from becoming too large */
+        width: 75vw; /* Make the glitch effect and images larger relative to the viewport */
     }
 
     /* Adjust the main content layout and text sizes for better readability */
@@ -403,22 +402,6 @@ footer a{
         font-size: 2.5rem;
     }
 
-}
-
-/* Tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
-    header h1 {
-        font-size: 5rem; /* Slightly larger headings for tablets */
-    }
-
-    .glitch, header img, .glitch-alt {
-        width: 74vw; /* Adjust the width of the glitch effect and images */
-        max-width: 500px;
-    }
-
-    main h2 {
-        font-size: 3rem; /* Adjust main heading size */
-    }
 }
 
 /* Desktop */

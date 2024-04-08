@@ -386,33 +386,68 @@ footer a{
 
 /* Media Queries */
 
-/* Phones (portrait mode)*/
-@media (max-width: 600px) {
-
+@media (max-width: 480px) {
     header h1 {
-        font-size: 3rem; /* Adjust the heading size to fit smaller screens */
+        font-size: 3rem; /* Ajusta el tamaño del título */
     }
-
-    .glitch, header img, .glitch-alt {
-        width: 75vw; /* Make the glitch effect and images larger relative to the viewport */
+    .glitch, .glitch-alt {
+        width: 90vw; /* Ajusta el ancho del glitch */
     }
+    main h2 {
+        font-size: 2rem; /* Ajusta el tamaño del subtítulo */
+    }
+    /* Añade aquí más ajustes específicos para móviles */
+}
 
-    /* Adjust the main content layout and text sizes for better readability */
+@media (min-width: 481px) and (max-width: 767px) {
+    header h1 {
+        font-size: 3.5rem; /* Ajusta para modo horizontal y tabletas pequeñas */
+    }
+    .glitch, .glitch-alt {
+        width: 70vw;
+    }
     main h2 {
         font-size: 2.5rem;
     }
-
+    /* Añade aquí más ajustes para teléfonos en modo horizontal y tabletas pequeñas */
 }
 
-/* Desktop */
-@media (min-width: 1025px) {
-    main {
-        max-width: 1200px; /* Set a max-width for the main content */
-        margin: auto; /* Center the main content */
+@media (min-width: 768px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 4rem; /* Ajusta para tabletas */
     }
+    .glitch, .glitch-alt {
+        width: 50vw;
+    }
+    main h2 {
+        font-size: 3rem;
+    }
+    /* Añade aquí más ajustes para tabletas y dispositivos de tamaño intermedio */
+}
 
-    .making-off {
-        width: 540px; /* Adjust the video and Instagram embed container size */
-        max-width: 800px; /* Optional: Set a max-width */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    header h1 {
+        font-size: 5rem; /* Ajusta para pantallas más grandes */
     }
+    .glitch, .glitch-alt {
+        width: 40vw;
+    }
+    main h2 {
+        font-size: 3.5rem;
+    }
+    /* Añade aquí más ajustes para pantallas de portátiles y escritorios */
+}
+
+@media (min-width: 1281px) {
+    header h1 {
+        font-size: 6rem; /* Ajusta para monitores grandes */
+    }
+    .glitch, .glitch-alt {
+        width: 35vw;
+    }
+    main h2 {
+        font-size: 4rem;
+    }
+    /* Añade aquí más ajustes para monitores grandes */
 }

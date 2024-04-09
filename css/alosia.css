@@ -403,8 +403,7 @@ footer a{
 
     .glitch, .glitch-alt {
         max-height: 70vh;
-        max-width: 70vw;
-        min-height: 30vh;
+        max-width: 67vw;
     }
 }
 

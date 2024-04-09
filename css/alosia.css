@@ -399,7 +399,7 @@ footer a{
 
 /* Media Queries */
 
-@media (min-width: 481px) and (max-width: 767px){
+@media (max-width: 767px){
 
     .glitch, .glitch-alt {
         max-height: 70vh;

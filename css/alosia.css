@@ -403,7 +403,7 @@ footer a{
 
     .glitch, .glitch-alt {
         max-height: 70vh;
-        max-width: 67vw;
+        max-width: 80vw;
     }
 }
 
@@ -411,7 +411,7 @@ footer a{
 @media (min-width: 768px) and (max-width: 1024px) {
     .glitch, .glitch-alt, header img {
         max-height: 70vh;
-        max-width: 67vw;
+        max-width: 80vw;
     }
 }
 

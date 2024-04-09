@@ -3,11 +3,7 @@
     body{
         margin: 0;
         font-family: "Rubik Glitch", sans-serif;
-        color: #363837;
         background-color: #A4F9FE;
-        font-size: 1.25em;
-        font-weight: 400;
-        line-height: 1.5;
         display: flex;
         flex-direction: column;
         background-image: url(../img/Grunge5.jpg);
@@ -18,14 +14,14 @@
 
 
 /* Header Styles */
-header{
+header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: #D9C50C;
     text-align: center;
-    padding-bottom: 20px;
+    padding: 5vh 0;
     width: 100%;
     background-image: url(../img/Grunge.jpg);
     background-blend-mode: multiply;
@@ -35,7 +31,7 @@ header{
 
 header h1{
     font-weight: 400;
-    font-size: 6em;
+    font-size: 12em;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -43,17 +39,32 @@ header h1{
     -webkit-text-fill-color: transparent;
     background-position: 70% 52%;
     background-size: cover;
+    margin: 0 auto;
 }
 
 header img{
     visibility: hidden; /* Mantain img alignment, hide img to show background (head::after) */
 }
 
-header img, .glitch, .glitch-alt {
-    width: 31.25vw; /* 500px equivalent if the full viewport width is 1600px */
-    max-width: 500px; /* Ensures the image doesn't scale indefinitely */
+
+.glitch {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    background-size: 500px auto;
+    animation: glitch 3.5s infinite steps(1);
+    overflow: hidden;
+    max-height: 60vh;
 }
 
+
+
+header img, .glitch, .glitch-alt {
+    max-width: 67vw; /* Ensures the image doesn't scale indefinitely */
+}
+
+button#cut-here{
+    display: none;
+}
 
 /* ---------------------------- ANIMATION SECTION ---------------------------- */
 
@@ -182,10 +193,13 @@ header img, .glitch, .glitch-alt {
 
 /* Main Content Styles */
 main{
-    max-width: 100%;   
+    max-width: 100%;
     display: flex;
     flex-direction: column;
-    flex: 1; /* Allows main content to grow and push footer down */
+    flex: 1;
+    padding: 5vh 5vw;
+    justify-content: center;
+    align-items: center;
 }
 
 main h2 {
@@ -196,7 +210,7 @@ main h2 {
 
 
 main h2, main p {
-    font-size: 4.5em;
+    font-size: 5em;
     font-weight: 100;
     padding-top: 2vw;
     color: transparent;
@@ -386,68 +400,38 @@ footer a{
 
 /* Media Queries */
 
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 3rem; /* Ajusta el tamaño del título */
-    }
+@media (min-width: 481px) and (max-width: 767px){
+
     .glitch, .glitch-alt {
-        width: 90vw; /* Ajusta el ancho del glitch */
+        max-height: 70vh;
+        max-width: 70vw;
+        min-height: 30vh;
     }
-    main h2 {
-        font-size: 2rem; /* Ajusta el tamaño del subtítulo */
-    }
-    /* Añade aquí más ajustes específicos para móviles */
 }
 
-@media (min-width: 481px) and (max-width: 767px) {
-    header h1 {
-        font-size: 3.5rem; /* Ajusta para modo horizontal y tabletas pequeñas */
-    }
-    .glitch, .glitch-alt {
-        width: 70vw;
-    }
-    main h2 {
-        font-size: 2.5rem;
-    }
-    /* Añade aquí más ajustes para teléfonos en modo horizontal y tabletas pequeñas */
-}
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    header h1 {
-        font-size: 4rem; /* Ajusta para tabletas */
+    .glitch, .glitch-alt, header img {
+        max-height: 70vh;
+        max-width: 67vw;
     }
-    .glitch, .glitch-alt {
-        width: 50vw;
-    }
-    main h2 {
-        font-size: 3rem;
-    }
-    /* Añade aquí más ajustes para tabletas y dispositivos de tamaño intermedio */
 }
 
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-    header h1 {
-        font-size: 5rem; /* Ajusta para pantallas más grandes */
-    }
-    .glitch, .glitch-alt {
-        width: 40vw;
-    }
-    main h2 {
-        font-size: 3.5rem;
-    }
-    /* Añade aquí más ajustes para pantallas de portátiles y escritorios */
+@media (min-width: 1024px) and (max-width:1024px) {
+.glitch, .glitch-alt, header img {
+    max-height: 80vh;
+    min-height: 30vh;
+    max-width: 45vw;
+}
 }
 
-@media (min-width: 1281px) {
-    header h1 {
-        font-size: 6rem; /* Ajusta para monitores grandes */
-    }
-    .glitch, .glitch-alt {
-        width: 35vw;
-    }
-    main h2 {
-        font-size: 4rem;
-    }
-    /* Añade aquí más ajustes para monitores grandes */
+@media (min-width: 1281px){
+.glitch, .glitch-alt, header img {
+    max-height: 80vh;
+    min-height: 30vh;
+    max-width: 45vw;
+}
+main h2 {
+    font-size: 6em;
+}
 }

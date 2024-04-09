@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alosia</title>
+    <link rel="icon" href="img/eyes.png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/alosia.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+</head>
+<body class="flex flex-col bg-[#A4F9FE] bg-cover" style="background-image: url('../img/Grunge5.jpg');">
+
+    <header class="flex flex-col items-center justify-evenly bg-[#D9C50C] text-center p-[5vh_0] w-full bg-cover h-screen" style="background-image: url('../img/Grunge.jpg');">
+        <div class="glitch w-[67vw] max-w-[500px] bg-auto bg-center invisible">
+            <img src="img/alosia.png" alt="Image of the piece ALOSIA by @balu_art and @gemalpu">
+            <!-- Tailwind no tiene una clase directa para display:none en hover, por lo que este botón puede necesitar CSS adicional o un enfoque diferente -->
+            <button id="cut-here" class="hidden">Cut Here</button>
+        </div>
+        
+        <h1 class="font-bold text-[12em] text-transparent bg-clip-text bg-[url('../img/Grunge01.jpg')] bg-cover m-auto">ALOSIA</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-full flex flex-col flex-1 p-[5vh_5vw] items-center justify-center">
+        <h2 class="sticky top-[35px] z-[7] text-[5em] font-light pt-[2vw] text-transparent bg-clip-text bg-[url('../img/Grunge.jpg')] bg-[43%_85%] bg-contain italic">Gemalpu is watching</h2>
+
+        <!-- Botón para activar la transparencia (requiere interacción adicional para dispositivos táctiles) -->
+        <button class="btn-trans">Wanna see what's inside?</button>       
+
+        <!-- Marquesina (marco y cristal) -->
+        <div class="marquesina-frame">
+            <!-- Contenido rotativo -->
+            <!-- Making off (Contenido 1) -->
+            <div class="making-off">
+                <!-- Vídeo -->
+                <div class="video-container">
+                    <video autoplay loop muted class="overlay-video">
+                        <source src="vid/Alosia.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <!-- Embed de Instagram -->
+                <div class="instagram-embed-wrapper">
+                    <!-- Se mantiene el iframe de Instagram sin cambios, ya que Tailwind no afecta a los iframes de forma directa -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de explicación -->
+        <section class="explanation">
+            <p>Why and where?</p>
+            <ul>
+                <li><a target="_blank" href="https://www.instagram.com/p/C4_PtJpKghy/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">First appearance</a></li>
+                <li><a target="_blank" href="https://www.instagram.com/p/C5GO8hUq7Xb/?img_index=1">What's next?</a></li>
+                <li><a target="_blank" href="">Where can I see the piece now? (coming soon)</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center p-[10px_0] text-[1.5rem] relative w-full clear-both mt-[20px]">
+        <p class="m-0 text-small font-bold text-[#D9C50C]">Stay tuned to find out more about this @balu_art project & future collaborations. You can follow the artists @gemalpu & @balu_art on ig.
+            Find out more of their work at <a class="robotto" target="_blank" href="//canal-gallery.com/artistas/balu">Canal galery.com</a> and <a class="montserrat" target="_blank" href="//www.gemalpu.com/">Gemalpu.com</a>
+        </p>
+    </footer>
+
+</body>
+</html>

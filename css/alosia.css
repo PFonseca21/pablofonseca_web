@@ -53,7 +53,7 @@ header img{
     background-size: 500px auto;
     animation: glitch 3.5s infinite steps(1);
     overflow: hidden;
-    max-height: 60vh;
+    max-height: 42vh;
 }
 
 
@@ -79,7 +79,6 @@ button#cut-here{
         display: inline-block;
         margin-top: 90px;
         background-image: url(../img/alosia.png);
-        background-size: 500px auto;
         animation: glitch 3.5s infinite steps(1);
         overflow: hidden;
         height: 50vh;
@@ -428,8 +427,7 @@ footer a{
 @media (min-width: 1281px){
 .glitch, .glitch-alt, header img {
     max-height: 80vh;
-    min-height: 30vh;
-    max-width: 45vw;
+    max-width: 20vw;
 }
 main h2 {
     font-size: 6em;

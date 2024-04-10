@@ -120,54 +120,42 @@
 
 <script>
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    
     let interval = null;
-    let iteration = 0;
-    const targetElement = document.querySelector("h1");
-    
-    // Función para iniciar la animación
-    function startAnimation() {
+
+    function animateTitle(target) {
+      let iteration = 0;
+
       clearInterval(interval);
-    
+
       interval = setInterval(() => {
-        targetElement.innerText = targetElement.innerText
+        target.innerText = target.innerText
           .split("")
           .map((letter, index) => {
             if (index < iteration) {
-              return targetElement.dataset.value[index];
+              return target.dataset.value[index];
             }
-    
+
             return letters[Math.floor(Math.random() * 26)];
           })
           .join("");
-    
-        if (iteration >= targetElement.dataset.value.length) {
+
+        if (iteration >= target.dataset.value.length) {
           clearInterval(interval);
         }
-    
+
         iteration += 1 / 3;
       }, 30);
     }
-    
-    // Iniciar la animación al cargar la página
-    document.addEventListener("DOMContentLoaded", startAnimation);
-    
-    // Detener la animación después de otra animación o evento específico
-    // Por ejemplo, aquí detenemos la animación después de 5 segundos, representando el final de otra animación
-    setTimeout(() => {
-      clearInterval(interval);
-    }, 5000); // Ajusta los 5000 ms según la duración de la otra animación
-    </script>
-    
-    // Iniciar la animación al cargar la página
-    document.addEventListener("DOMContentLoaded", startAnimation);
-    
-    // Detener la animación después de otra animación o evento específico
-    // Por ejemplo, aquí detenemos la animación después de 5 segundos, representando el final de otra animación
-    setTimeout(() => {
-      clearInterval(interval);
-    }, 5000); // Ajusta los 5000 ms según la duración de la otra animación
-    </script>
+
+    window.addEventListener("load", () => {
+      const titleElement = document.querySelector("h1");
+      animateTitle(titleElement);  // Activa la animación cuando toda la página esté cargada
+    });
+
+    document.querySelector("h1").addEventListener("mouseover", event => {
+      animateTitle(event.target);  // Activa la animación al pasar el mouse sobre el título
+    });
+  </script>
 
 </body>
 </html>

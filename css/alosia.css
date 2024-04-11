@@ -8,6 +8,10 @@ body {
     background-blend-mode: multiply;
 }
 
+body.body-state1 {
+    overflow: hidden;
+}
+
 /* Header Styles */
 header {
     display: flex;
@@ -25,6 +29,7 @@ header {
     background-position: center;
     height: 100vh;
 }
+
 
 header h1 {
     font-size: clamp(5rem, 13vw, 12rem);
@@ -45,22 +50,78 @@ h1:hover{
     background-size: cover;
 }
 
-.poster {
+
+.glitch .poster{
+    position: relative;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: clamp(250px, 60vw, 500px);
+    margin-top: 90px;
+    overflow: hidden;
+}
+
+.glitch{
+    animation: glitch 2.5s infinite steps(1);
+    background-image: url(/img/alosia.png);
+}
+
+.poster{
+    visibility: hidden;
+}
+
+.poster2 {
     display: block; /* Asegúrate de que la imagen se muestre correctamente */
     max-width: 100%; /* Evita que la imagen se desborde de su contenedor */
     height: auto; /* Mantiene la proporción de aspecto de la imagen */
-    /* Aplica clamp() para el tamaño de la imagen */
-    width: clamp(250px, 59vw, 500px); /* Tamaño mínimo de 250px, tamaño preferido de 60vw, y máximo de 500px */
+    margin-top: 90px;
+    width: clamp(250px, 60vw, 500px); /* Tamaño mínimo de 250px, tamaño preferido de 60vw, y máximo de 500px */
 }
 
+a.button{
+    position: absolute;
+    top: 31%;
+    right: 6%;
+    font-style: oblique;
+    font-weight: bolder;
+    color: red;
+    text-decoration: none;
+}
 
-.glitch-wrap{
-    position: relative;
+pre.b1 {
+    position: absolute;
+    height: 16%;
+    width: 17%;
     display: inline-block;
+    background-color: transparent;
+    border-width: 10px;
+    border-color: red;
+    box-sizing: border-box;
+    z-index: 5;
+    border-style: dashed;
+    border-radius: 100%;
+    top: 27%;
+    right: 37%;
 }
+
+    img.eye {
+        position: fixed;
+        top: 58%;
+        right: 39%;
+        z-index: 10;
+        transition: transform 0.5s ease-in-out;
+    }
 
 
 /* ---------------------------- ANIMATION SECTION ---------------------------- */
+
+/*state change*/
+.state1, .state2{
+    display: none;
+    }
+    
+    body.body-state1 .state1{display: block;}
+    body.body-state2 .state2{display: block;}
 
 /* Ojo cutout.png */
 .cutout{
@@ -69,22 +130,52 @@ h1:hover{
 
 
 /* Original glitch effect */
-.glitch {
-    display: inline-block;
-    margin-top: 90px;
-    background-image: url(../img/alosia.png);
-    animation: glitch 3.5s infinite steps(1);
-    overflow: hidden;
-    height: 50vh;
-}
+
+
 
 /* Keyframes for glitch animation */
 @keyframes glitch{
-    0%, 100% {
+    0%, 8%, 38%, 100% {
         background: url("../img/alosia.png");
         background-size: cover;
     }
 
+    2.5% {
+        background: url("../img/glitch1.png");
+        background-size: cover;
+        opacity: 1;
+    }
+
+    5% {
+        background: url("../img/glitch2.png");
+        background-size: cover;
+        opacity: 0;
+    }
+    
+    7.5% {
+        background: url("../img/glitch3.png");
+        background-size: cover;
+        opacity: 1;
+
+    }
+    37.5% {
+        background: url("../img/glitch1.png");
+        background-size: cover;
+        opacity: 1;
+    }
+
+    35% {
+        background: url("../img/glitch2.png");
+        background-size: cover;
+        opacity: 0;
+    }
+    
+    32.5% {
+        background: url("../img/glitch3.png");
+        background-size: cover;
+        opacity: 1;
+
+    }
     92.5% {
         background: url("../img/glitch1.png");
         background-size: cover;
@@ -106,7 +197,7 @@ h1:hover{
 
 }
 
-.glitch-alt{        
+/*.glitch-alt{        
     display: inline-block;
     margin-top: 90px;
     background-image: url(../img/replace-alosia.png);
@@ -115,6 +206,7 @@ h1:hover{
     overflow: hidden;
     height: 50vh;;
 }
+*/
 
 @keyframes glitch-alt{
     0%, 100% {
@@ -142,20 +234,6 @@ h1:hover{
     }
 
 }
-
-.cutout-animation {
-    animation: moveCutout 1s forwards;
-}
-
-@keyframes moveCutout {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(Xpx, Ypx); /* Reemplaza X e Y con los valores que necesites */
-    }
-}
-
 
 
 
@@ -197,8 +275,10 @@ main{
 
 main h2 {
 position: sticky;
-top: 35px;
+top: 80%;
 z-index: 7;
+transition: opacity 0.5s ease-in-out; /* Smooth transition for opacity */
+opacity: 1; /* Ensure full opacity by default */
 }
 
 
@@ -224,21 +304,6 @@ margin: 10px 0; /* Adjusted margin */
 
 
 /* Marquesina (container, glass & frame)*/
-/* Button to activate transparency*/
-.btn-trans {
-    backdrop-filter: blur(4px);
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    position: sticky;
-    top: 200px;
-    z-index: 7;
-    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-    border-top: 1px solid rgba(0, 0, 0, 0.5);
-    border-left: 1px solid rgba(0, 0, 0, 0.5);
-}
-
 
 /*Container/frame */
 .marquesina-frame {
@@ -266,7 +331,7 @@ left: 0;
 right: 0;
 bottom: 0;
 z-index: 6;
-backdrop-filter: blur(6px);
+backdrop-filter: blur(var(--frame-blur, 6px));
 border-radius: 10px;
 pointer-events: none;
 box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);

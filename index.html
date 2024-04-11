@@ -7,8 +7,10 @@
     <!-- GSAP -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    
+    <script type="text/javascript" src="./js/glitched.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.5.2/dist/smooth-scrollbar.js"></script>
 
     
     <title>Alosia</title>
@@ -36,23 +38,36 @@
     <!-- END OF GOOGLE GONTS IMPORTS-->
 
 </head>
-<body>
-    
+<body class="body-state1">
+    <div class="state2">
+      <img src="img/alosia-cut.png" class="eye" alt="watch out">
+    </div>
     <!-- HEADER SECTION -->
     <header>
-        <div class="glitch-wrap">
-            <img src="img/alosia.png" class="poster" alt="Image of the piece ALOSIA by @balu_art and @gemalpu">
-        </div>
-        
-        <h1 data-value="ALOSIA">ALOSIA</h1>
+          <div class="state1">
+            <div class="glitch">
+              <img src="img/alosia.png" class="poster" alt="Image of the piece ALOSIA by @balu_art and @gemalpu">
+            </div>
+                        <a href="#" class="button" onclick="changeState(2)"><-Cut Here</a>
+            <pre class="b1"></pre>
+          </div>
+          <div class="state2">
+            <img src="img/replace-main.png" class="poster2" alt="Image of the piece ALOSIA by @balu_art and @gemalpu">
+
+          </div>
+
+
+          <div class="state1">
+        <h1 id="state1-h1" data-value="ALOSIA">ALOSIA</h1>
+      </div>
+      <div class="state2">
+      <h1 id="state2-h1" data-value="ALOSIA">ALOSIA</h1>
+      </div>
     </header>
     
     <!-- Main Content-->
     <main>
-        <h2>Gemalpu is watching</h2>
-
-        <!-- Button -->
-        <button class="btn-trans">Wanna see what's inside?</button>       
+        <h2>Gemalpu is watching</h2>    
 
     <!-- Marquesina (frame & glass) -->
     <div class="marquesina-frame">
@@ -92,7 +107,7 @@
     <!-- Footer -->
    <footer>
         <p>Stay tuned to find out more about this @balu_art project & future collaborations. You can follow the artists @gemalpu & @balu_art on ig.
-            Find out more of their work at <a class="robotto" target="_blank" href="//canal-gallery.com/artistas/balu">Canal galery.com</a> and <a class="montserrat" target="_blank" href="//www.gemalpu.com/">Gemalpu.com</a>
+            Find out more about their work at <a class="robotto" target="_blank" href="//canal-gallery.com/artistas/balu">Canal galery.com</a> and <a class="montserrat" target="_blank" href="//www.gemalpu.com/">Gemalpu.com</a>
         </p> 
     </footer>
 
@@ -103,61 +118,158 @@
 
 <!-- ______________________________ JAVASCRIPT SECTION ______________________________ -->
 
-<script>
-    gsap.to(".glitch", {
-        duration: 0.2, // Duración corta para un efecto de glitch rápido
-        opacity: 1, // Cambia la opacidad para hacer visible el glitch
-        repeat: -1, // Repetir indefinidamente
-        yoyo: true, // Vuelve al estado original para simular el "parpadeo"
-        stagger: 0.1, // Retraso escalonado para cada elemento de glitch para variación
-        ease: "steps(1)", // Efecto brusco como un glitch
-        clipPath: "polygon(0 20%, 100% 20%, 100% 25%, 0 25%)", // Cambiar clip-path para variar el efecto
-        rotation: 0.01, // Truco para mejorar el rendimiento en algunos navegadores
-    });
-</script>
-
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.5.1/dist/gsap.min.js"></script>
 <script src="myCustomCode.js"></script>
 
 <script>
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let interval = null;
-
-    function animateTitle(target) {
-      let iteration = 0;
-
-      clearInterval(interval);
-
-      interval = setInterval(() => {
-        target.innerText = target.innerText
-          .split("")
-          .map((letter, index) => {
-            if (index < iteration) {
-              return target.dataset.value[index];
-            }
-
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let state1Interval = null;
+  let state2Interval = null;
+  
+  function animateText(target, continuous = false) {
+    let iteration = 0;
+  
+    return setInterval(() => {
+      target.innerText = target.innerText
+        .split("")
+        .map((letter, index) => {
+          if (continuous) {
             return letters[Math.floor(Math.random() * 26)];
-          })
-          .join("");
-
-        if (iteration >= target.dataset.value.length) {
-          clearInterval(interval);
+          }
+          if (index < iteration) {
+            return target.dataset.value[index];
+          }
+          return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+  
+      if (!continuous && iteration >= target.dataset.value.length) {
+        clearInterval(state2Interval);
+      }
+  
+      iteration += continuous ? 0 : 1 / 3;
+    }, 30);
+  }
+  
+  // Continuous animation for state 1
+  state1Interval = animateText(document.querySelector("#state1-h1"), true);
+  
+  // Observe body class changes for state transition
+  const bodyObserver = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+      if (mutation.attributeName === "class") {
+        const currentClass = document.body.getAttribute("class");
+        if (currentClass === "body-state2" && state1Interval) {
+          clearInterval(state1Interval); // Stop state 1 animation
         }
-
-        iteration += 1 / 3;
-      }, 30);
+      }
+    });
+  });
+  
+  bodyObserver.observe(document.body, { attributes: true });
+  
+  // State 2 Scroll Animation without Cooldown
+  window.addEventListener("scroll", () => {
+    const h1Element = document.querySelector("#state2-h1");
+    const rect = h1Element.getBoundingClientRect();
+    const isVisible = (rect.top >= 0) && (rect.bottom <= window.innerHeight);
+  
+    if (isVisible) {
+      if (state2Interval) clearInterval(state2Interval);
+      state2Interval = animateText(h1Element);
     }
-
-    window.addEventListener("load", () => {
-      const titleElement = document.querySelector("h1");
-      animateTitle(titleElement);  // Activa la animación cuando toda la página esté cargada
-    });
-
-    document.querySelector("h1").addEventListener("mouseover", event => {
-      animateTitle(event.target);  // Activa la animación al pasar el mouse sobre el título
-    });
+  });
   </script>
+
+
+  <script>
+    function checkOverlap() {
+  const eye = document.querySelector('.eye');
+  const frame = document.querySelector('.marquesina-frame');
+  const frameRect = frame.getBoundingClientRect();
+  const eyeRect = eye.getBoundingClientRect();
+
+  // Check if the .eye element overlaps with the .marquesina-frame
+  const isOverlapping = !(eyeRect.bottom < frameRect.top || 
+                           eyeRect.top > frameRect.bottom || 
+                           eyeRect.right < frameRect.left || 
+                           eyeRect.left > frameRect.right);
+
+  // If they overlap, reduce the blur effect
+  if (isOverlapping) {
+    frame.style.setProperty('--frame-blur', '0.5px');
+  } else {
+    frame.style.setProperty('--frame-blur', '6px');
+  }
+}
+
+// Listen for scroll events to check for overlap
+window.addEventListener('scroll', checkOverlap);
+
+// Check for overlap initially in case the .eye is already over the .marquesina-frame on load
+checkOverlap();
+
+  </script>
+
+<script>
+  function adjustH2Visibility() {
+  const h2 = document.querySelector('main h2');
+  const explanation = document.querySelector('.explanation');
+  const h2Rect = h2.getBoundingClientRect();
+  const explanationRect = explanation.getBoundingClientRect();
+
+  // Check if main h2 overlaps with .explanation
+  const isOverlapping = !(h2Rect.bottom < explanationRect.top || 
+                          h2Rect.top > explanationRect.bottom);
+
+  // Adjust opacity based on overlap
+  if (isOverlapping) {
+    h2.style.opacity = 0; // Make h2 invisible
+  } else {
+    h2.style.opacity = 1; // Make h2 fully visible
+  }
+}
+
+// Listen for scroll events to adjust h2 visibility
+window.addEventListener('scroll', adjustH2Visibility);
+
+// Adjust h2 visibility initially in case of overlap on load
+adjustH2Visibility();
+
+</script>
+
+<script>
+  function adjustEyeScale() {
+  const eye = document.querySelector('.eye');
+  const explanation = document.querySelector('.explanation');
+  const eyeRect = eye.getBoundingClientRect();
+  const explanationRect = explanation.getBoundingClientRect();
+
+  // Check if the .eye element overlaps with .explanation
+  const isOverlapping = !(eyeRect.bottom < explanationRect.top || 
+                          eyeRect.top > explanationRect.bottom || 
+                          eyeRect.right < explanationRect.left || 
+                          eyeRect.left > explanationRect.right);
+
+  // Adjust scale based on overlap
+  if (isOverlapping) {
+    eye.style.transform = 'scale(0.5)'; // Make .eye smaller
+  } else {
+    eye.style.transform = 'scale(1)'; // Keep .eye at normal size
+  }
+}
+
+// Listen for scroll events to adjust .eye scale
+window.addEventListener('scroll', adjustEyeScale);
+
+// Adjust .eye scale initially in case of overlap on load
+adjustEyeScale();
+
+</script>
+
+  </body>
+  </html>
 
 </body>
 </html>

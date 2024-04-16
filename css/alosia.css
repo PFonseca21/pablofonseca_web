@@ -249,7 +249,7 @@ pre.b1 {
 header::after{
     content: "";
     position: absolute;
-    bottom: -280px;
+    bottom: -447px;
     left: 0;
     width: 100%;
     height: 66%;

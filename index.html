@@ -12,7 +12,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.5.2/dist/smooth-scrollbar.js"></script>
 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Flip.min.js"></script>
+
+
+
     <title>Alosia</title>
     <link rel="icon" href="img/eyes.png"> <!-- icono pestaña -->
     <link rel="stylesheet" type="text/css" href="css/alosia.css"> <!-- Style sheet -->
@@ -40,7 +43,7 @@
 </head>
 <body class="body-state1">
     <div class="state2">
-      <img src="img/alosia-cut.png" class="eye" alt="watch out">
+      <img src="img/alosia-cut.png" class="eye" alt="watch out" style="position: fixed; top: 33%; left: 55%; transform: translate(-50%, -50%);">
     </div>
     <!-- HEADER SECTION -->
     <header>
@@ -53,7 +56,6 @@
           </div>
           <div class="state2">
             <img src="img/replace-main.png" class="poster2" alt="Image of the piece ALOSIA by @balu_art and @gemalpu">
-
           </div>
 
 
@@ -266,8 +268,39 @@ window.addEventListener('scroll', adjustEyeScale);
 // Adjust .eye scale initially in case of overlap on load
 adjustEyeScale();
 
+gsap.registerPlugin(Flip);
+
+const box = document.querySelector(".box"), 
+originalContainer = document.querySelector(".originalContainer"),
+newContainer = document.querySelector(".newContainer");
+
+document.querySelector("button")
+
 </script>
 
+
+<script>
+  // Ensure the DOM is fully loaded
+  window.addEventListener('load', () => {
+      const eye = document.querySelector('.eye');
+  
+      // Capture the first state
+      const state = Flip.getState(eye);
+  
+      // Apply final styles as defined in CSS
+      eye.style.removeProperty('top');
+      eye.style.removeProperty('left');
+      eye.style.removeProperty('transform');
+  
+      // Animate to the final state from the first state
+      Flip.from(state, {
+          duration: 1.5, // Duration of the animation in seconds
+          ease: "power3.out", // Easing function for a smooth effect
+          onComplete: () => console.log('Animation complete!')
+      });
+  });
+  </script>
+  
   </body>
   </html>
 

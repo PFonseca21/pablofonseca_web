@@ -43,7 +43,8 @@
 </head>
 <body class="body-state1">
     <div class="state2">
-      <img src="img/alosia-cut.png" class="eye" alt="watch out" style="position: fixed; top: 33%; left: 55%; transform: translate(-50%, -50%);">
+      <img src="img/alosia-cut.png" class="eye" alt="watch out">
+    <div class="newContainer"></div>
     </div>
     <!-- HEADER SECTION -->
     <header>
@@ -278,29 +279,44 @@ document.querySelector("button")
 
 </script>
 
-
 <script>
-  // Ensure the DOM is fully loaded
-  window.addEventListener('load', () => {
+  // Function to handle state change
+  function changeState() {
       const eye = document.querySelector('.eye');
   
-      // Capture the first state
-      const state = Flip.getState(eye);
+      // Define the initial position for the transition
+      eye.style.position = 'fixed';
+      eye.style.top = '33%';
+      eye.style.left = '55%';
+      eye.style.transform = 'translate(-50%, -50%)';
   
-      // Apply final styles as defined in CSS
-      eye.style.removeProperty('top');
-      eye.style.removeProperty('left');
-      eye.style.removeProperty('transform');
+      // Request an animation frame to ensure styles are applied
+      requestAnimationFrame(() => {
+          // Capture the initial state
+          const firstState = Flip.getState(eye);
   
-      // Animate to the final state from the first state
-      Flip.from(state, {
-          duration: 1.5, // Duration of the animation in seconds
-          ease: "power3.out", // Easing function for a smooth effect
-          onComplete: () => console.log('Animation complete!')
+          // Apply final styles as defined in your CSS (ensure these are set correctly in your CSS file)
+          eye.style.top = '58%'; // Final position top percentage
+          eye.style.right = '39%'; // Final position right percentage
+          eye.style.left = 'auto'; // Since we're using right for final positioning
+          eye.style.transform = 'translate(0, 0)'; // Reset transform if any
+  
+          // Animate to the final state
+          Flip.from(firstState, {
+              duration: 1.5, // Duration in seconds
+              ease: "power3.out", // Easing function
+              absolute: true, // Use absolute positioning during flip
+              onComplete: () => console.log('Animation complete!')
+          });
       });
-  });
+  }
+  
+  // Example usage: call changeState() when ready to transition from state1 to state2
+  // This might be bound to a button click or another event in your actual use case
+  document.querySelector('.button').addEventListener('click', changeState);
   </script>
   
+
   </body>
   </html>
 

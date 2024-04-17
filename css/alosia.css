@@ -104,14 +104,6 @@ pre.b1 {
     right: 37%;
 }
 
-    img.eye {
-        position: fixed;
-        top: 58%;
-        right: 39%;
-        z-index: 10;
-        transition: transform 0.5s ease-in-out;
-    }
-
 
 /* ---------------------------- ANIMATION SECTION ---------------------------- */
 
@@ -196,45 +188,6 @@ pre.b1 {
     }
 
 }
-
-/*.glitch-alt{        
-    display: inline-block;
-    margin-top: 90px;
-    background-image: url(../img/replace-alosia.png);
-    background-size: 500px auto;
-    animation: glitch-alt 3.5s infinite steps(1);
-    overflow: hidden;
-    height: 50vh;;
-}
-*/
-
-@keyframes glitch-alt{
-    0%, 100% {
-        background: url("../img/replace-alosia.png");
-        background-size: cover;
-    }
-
-    92.5% {
-        background: url("../img/replace-glitch1.png");
-        background-size: cover;
-        opacity: 1;
-    }
-
-    95% {
-        background: url("../img/replace-glitch2.png");
-        background-size: cover;
-        opacity: 0;
-    }
-    
-    97.5% {
-        background: url("../img/replace-glitch3.png");
-        background-size: cover;
-        opacity: 1;
-
-    }
-
-}
-
 
 
 /* ---------------------------- END OF ANIMATIONS ---------------------------- */

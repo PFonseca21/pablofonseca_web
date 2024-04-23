@@ -78,10 +78,18 @@ h1:hover{
     width: clamp(250px, 60vw, 500px); /* Tamaño mínimo de 250px, tamaño preferido de 60vw, y máximo de 500px */
 }
 
-a.button{
+.eye {
     position: absolute;
-    top: 50%;
-    right: -50px;
+    top: 50%; /* Adjust based on where you want it over the image */
+    left: 50%; /* Adjust as needed */
+    transform: translate(-50%, -50%); /* Center the .eye on the desired position */
+    transition: all 0.3s ease; /* Smooth transition for moving to fixed */
+}
+
+a.button{
+    position: relative;
+    top: -48%;
+    right: -43%;
     font-style: oblique;
     font-weight: bolder;
     color: red;

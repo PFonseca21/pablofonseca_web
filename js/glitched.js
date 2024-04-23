@@ -1,47 +1,23 @@
 
+let hasScrolled = false; // Flag to check if the scroll function has already run
 
-function positionEye(firstTime = false) {
-    const headerImage = document.querySelector('.poster2'); // Adjust this selector if needed.
+function fixEyeOnFirstScroll() {
     const eye = document.querySelector('.eye');
+    const rect = eye.getBoundingClientRect(); // Get the eye's position relative to the viewport
 
-    if (headerImage && eye) {
-        const rect = headerImage.getBoundingClientRect();
-
-        // Calculate position based on header image dimensions
-        let initialTop = rect.top + window.scrollY + (rect.height * 0.33);
-        let initialLeft = rect.left + (rect.width * 0.23);
-
+    if (!hasScrolled) {
+        // Apply fixed positioning with initial coordinates matched
         eye.style.position = 'fixed';
-        eye.style.top = `${initialTop}px`;
-        eye.style.left = `${initialLeft}px`;
-        eye.style.transform = 'translate(-50%, -50%)';
-        eye.style.zIndex = '10';
+        eye.style.top = `${rect.top}px`;
+        eye.style.left = `${rect.left}px`;
+        eye.style.transform = ''; // Remove transform since it's no longer needed
 
-        if (firstTime) {
-            const firstState = Flip.getState(eye);
-
-            // Apply final styles for animation
-            let finalTop = rect.top + window.scrollY + (rect.height * 0.58);
-            let finalLeft = rect.left + (rect.width * 0.39);
-
-            requestAnimationFrame(() => {
-                eye.style.top = `${finalTop}px`;
-                eye.style.left = `${finalLeft}px`;
-                eye.style.transform = 'translate(-50%, -50%)'; // Adjust this as needed
-
-                // Animate from the initial state to the final state
-                Flip.from(firstState, {
-                    duration: 1.5,
-                    ease: "power3.out",
-                    onComplete: () => console.log('Transition complete!')
-                });
-            });
-        }
+        hasScrolled = true; // Set flag to prevent re-running
     }
 }
 
-window.addEventListener('load', () => positionEye());
-window.addEventListener('resize', () => positionEye(true)); // Recalculate on resize
+window.addEventListener('scroll', fixEyeOnFirstScroll, { once: true }); // Use the `{ once: true }` option to only run this listener once
+
 
 var changeState = function(state) {
     document.body.className = "body-state" + state;

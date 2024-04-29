@@ -48,7 +48,8 @@
             <div class="glitch">
               <img src="img/alosia.png" class="poster" alt="Image of the piece ALOSIA by @balu_art and @gemalpu">
             </div>
-            <a href="#" class="button" onclick="changeState(2)"><i class="fas fa-cut"></i></a>
+            <a href="#" class="button" onclick="changeState(2)"><i class="fas fa-cut"></i>
+            <h2 class="Cut sign">CUT HERE</h2></a>
           </div>
           <div class="state2" style="position:relative;">
             <img src="img/replace-main.png" class="poster2" alt="Image of the piece ALOSIA by @balu_art and @gemalpu">
@@ -84,8 +85,11 @@
                 </video>
             </div>
             <!-- Instagram Embed -->
-            <div class="instagram-embed-wrapper"> <!-- I'm wraping the embed in a Div to force my style over the embed code-->
-                <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="https://www.instagram.com/reel/C5BmOZJsxaL/embed/?cr=1&amp;v=14&amp;wp=597&amp;rd=https%3A%2F%2Ffedellart.github.io&amp;rp=%2F#%7B%22ci%22%3A0%2C%22os%22%3A696.0999999940395%2C%22ls%22%3A27.5%2C%22le%22%3A115.19999998807907%7D" allowtransparency="true" allowfullscreen="true" frameborder="0" height="857" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" style="background: white; max-width: 540px; width: calc(100% - 2px); border-radius: 3px; border: 1px solid rgb(219, 219, 219); box-shadow: none; display: block; margin: 0px 0px 12px; min-width: 326px; padding: 0px;"></iframe> 
+            <div class="instagram-embed-wrapper"> <!-- I'm wrapping the embed in a Div to force my style over the embed code-->
+                <iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="https://www.instagram.com/reel/C5BmOZJsxaL/embed/?cr=1&amp;v=14&amp;wp=597&amp;rd=https%3A%2F%2Ffedellart.github.io&amp;rp=%2F#%7B%22ci%22%3A0%2C%22os%22%3A696.0999999940395%2C%22ls%22%3A27.5%2C%22le%22%3A115.19999998807907%7D" 
+                allowtransparency="true" allowfullscreen="true" frameborder="0" height="857" data-instgrm-payload-id="instagram-media-payload-0" scrolling="no" 
+                style="background: white; border-radius: 3px; border: 1px solid rgb(219, 219, 219); 
+                box-shadow: none; display: block; margin: 0px 0px 12px; padding: 0px;"></iframe> 
                 <script async="" src="//www.instagram.com/embed.js"></script>
             </div>
         </div>
@@ -98,7 +102,7 @@
         <ul>
             <li><a target="_blank" href="https://www.instagram.com/p/C4_PtJpKghy/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==">First appearance</a></li>
             <li><a target="_blank" href="https://www.instagram.com/balu_art/">What's next?</a></li>
-            <li><a target="_blank" href="">Where can I see the piece now? (comming soon)</a></li>
+            <li><a target="_blank" href="">Where can I see the piece now? (coming soon)</a></li>
         </ul>
     </section>
  </main>      
@@ -106,7 +110,7 @@
     <!-- Footer -->
    <footer>
         <p>Stay tuned to find out more about this @balu_art project & future collaborations. You can follow the artists @gemalpu & @balu_art on ig.
-            Find out more about their work at <a class="robotto" target="_blank" href="//canal-gallery.com/artistas/balu">Canal galery.com</a> and <a class="montserrat" target="_blank" href="//www.gemalpu.com/">Gemalpu.com</a>
+            Find out more about their work at <a class="robotto" target="_blank" href="//canal-gallery.com/artistas/balu">Canalgallery.com</a> and <a class="montserrat" target="_blank" href="//www.gemalpu.com/">Gemalpu.com</a>
         </p> 
     </footer>
 
@@ -168,7 +172,7 @@
   
   bodyObserver.observe(document.body, { attributes: true });
   
-  // State 2 Scroll Animation without Cooldown
+  // State 2 Scroll Animation without Cool down
   window.addEventListener("scroll", () => {
     const h1Element = document.querySelector("#state2-h1");
     const rect = h1Element.getBoundingClientRect();
@@ -191,9 +195,9 @@
 
   // Check if the .eye element overlaps with the .marquesina-frame
   const isOverlapping = !(eyeRect.bottom < frameRect.top || 
-                           eyeRect.top > frameRect.bottom || 
-                           eyeRect.right < frameRect.left || 
-                           eyeRect.left > frameRect.right);
+                          eyeRect.top > frameRect.bottom || 
+                          eyeRect.right < frameRect.left || 
+                          eyeRect.left > frameRect.right);
 
   // If they overlap, reduce the blur effect
   if (isOverlapping) {

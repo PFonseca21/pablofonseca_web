@@ -1,0 +1,14 @@
+{
+  "name": "pablofonseca_web",
+  "version": "1.0.0",
+  "description": "I'm developing this website to showcase an artistic intervention from two nationally recognised artists as part of a wider colaborative project to resignify public spaces. \r Currently working on the implementation of Tailwind framework for responsiveness and fine-tuning javascript animations. Expected to grow for displaying other actions from the same project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}
